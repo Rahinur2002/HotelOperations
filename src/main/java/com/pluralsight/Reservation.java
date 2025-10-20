@@ -1,14 +1,6 @@
 package com.pluralsight;
 
 public class Reservation {
-    getRoomType()
-    setRoomType(String roomType)
-    getPrice()
-    getNumberOfNights()
-    setNumberOfNights(int numberOfNights)
-    isWeekend()
-    setIsWeekend(boolean isWeekend)
-    getReservationTotal()
 
     private String roomType;
     private int numberOfNights;
@@ -45,7 +37,7 @@ public class Reservation {
     }
 
     public double getPrice(){
-        double pricePernight;
+        double pricePernight = 0.0;
         if(this.roomType.equals("king")) {
             pricePernight = 139.00;
         }
@@ -56,5 +48,9 @@ public class Reservation {
             pricePernight *= 1.10;
         }
         return pricePernight;
+    }
+
+    public double getReservationTotal() {
+        return this.numberOfNights * getPrice();
     }
 }
